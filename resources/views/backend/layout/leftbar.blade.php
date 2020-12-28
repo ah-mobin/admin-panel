@@ -10,21 +10,16 @@
                             <li class="text-muted menu-title">Navigation</li>
 
                             <li class="has_sub">
-                                <a href="" class="waves-effect">
+                                <a href="{{ url('/admin') }}" class="waves-effect">
                                     <i class="ti-home"></i> <span>Dashboard</span>
                                 </a>
                             </li>
 
                             <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="ion-pricetags"></i> <span> Catalog </span> <span class="menu-arrow"></span> </a>
+                                <a href="javascript:void(0);" class="waves-effect"><i class="ion-pricetags"></i> <span> Home Page </span> <span class="menu-arrow"></span> </a>
                                 <ul class="list-unstyled">
-                                    <li><a href="#">Categories</a></li>
-                                    <li><a href="#">Products</a></li>
-                                    <li><a href="#">Recurring Profile</a></li>
-                                    <li><a href="#">Brands</a></li>
-                                    <li><a href="#">Manufacturers</a></li>
-                                    <li><a href="#">Reviews</a></li>
-                                    <li><a href="#">Information</a></li>
+                                    <li><a href="{{ route('sliders') }}">Slider</a></li>
+                                    <li><a href="{{ route('galleries') }}">Gallery</a></li>
                                 </ul>
                             </li>
 
