@@ -78,7 +78,7 @@
                                     <td>{{ $slider->slider_heading_one }}</td>
                                     <td>{{ $slider->slider_heading_two }}</td>
                                     <td>{{ $slider->slider_heading_three }}</td>
-                                    <td><img src="{{ $slider->slider_image }}" class="w-25" alt=""></td>
+                                    <td><img src="{{ $slider->slider_image }}" width="100px" alt=""></td>
                                     <td><span class="badge badge-primary">{{ $slider->status }}</span></td>
                                     <td>
                                         <a href="{{ url('slider/edit/'.$slider->id) }}"> <i class="fa fa-edit mr-4"></i> </a>

@@ -16,6 +16,7 @@ class CreateHomeGalleriesTable extends Migration
         Schema::create('home_galleries', function (Blueprint $table) {
             $table->id();
             $table->string('gallery_image_location');
+            $table->string('status',10)->default('inactive');
             $table->timestamps();
             $table->softDeletes();
         });

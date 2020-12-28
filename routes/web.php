@@ -42,3 +42,4 @@ Route::get('slider/edit/{id}', [HomePageController::class,'sliderEdit']);
 Route::post('update/slider/{id}', [HomePageController::class,'sliderUpdate']);
 
 Route::get('galleries', [HomePageController::class,'galleries'])->name('galleries');
+Route::post('gallery-image-added', [HomePageController::class,'galleryImageAdded'])->name('added.image');

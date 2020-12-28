@@ -75,7 +75,7 @@ class HomePageController extends Controller
             $updateSliderPathOne = explode('/',$updateSliderPath)[1];
             $updateSliderPathTwo = explode('/',$updateSliderPath)[2];
             $updateSliderPathThree = explode('/',$updateSliderPath)[3];
-            $updateSliderPathFour = explode('/',$updateSliderPath)[3];
+            $updateSliderPathFour = explode('/',$updateSliderPath)[4];
             $host = $_SERVER['HTTP_HOST'];
             $updatedSliderLocationPath = "http://".$host."/storage/".$updateSliderPathOne."/".$updateSliderPathTwo."/".$updateSliderPathThree."/".$updateSliderPathFour;
 
@@ -109,6 +109,38 @@ class HomePageController extends Controller
 
     public function galleries(){
         $galleries = HomeGallery::select('id','gallery_image_location')->get();
-        return view('backend.pages.home.gallery.galleries',compact('sliders'));
+        return view('backend.pages.home.gallery.galleries',compact('galleries'));
+    }
+
+
+    public function galleryImageAdded(Request $request){
+        $request->validate([
+            'gallery_image_location' => 'required|mimes: jpg,JPG,JPEG,jpeg,png,PNG,WEBP,webp',
+        ]);
+
+        $file = $request->file('gallery_image_location')->store('public/pages/home/galleries');
+        $imgPathOne = explode('/',$file)[1];
+        $imgPathTwo = explode('/',$file)[2];
+        $imgPathThree = explode('/',$file)[3];
+        $imgPathFour = explode('/',$file)[4];
+        
+        $host = $_SERVER['HTTP_HOST'];
+        
+        $fileLocation = "http://".$host."/storage/".$imgPathOne."/".$imgPathTwo."/".$imgPathThree."/".$imgPathFour;
+
+
+
+        $insert = HomeGallery::create([
+            'gallery_image_location' => $fileLocation,
+        ]);
+
+
+        if($insert){
+            session()->flash('success','Insert Image Into Gallery');
+            return redirect()->back();
+        }else{
+            session()->flash('warning','Something Went Wrong!');
+            return redirect()->back();
+        }
     }
 }
