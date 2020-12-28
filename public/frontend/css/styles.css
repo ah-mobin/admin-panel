@@ -662,3 +662,62 @@ footer .social_media .social_links ul li a i{
     height: 285px;
     padding-right: 20px;
 }
+
+
+
+/*  join us page */
+.facilities h2{
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    color: #F22613;
+    margin-bottom: 30px;
+}
+
+.facilities .facility_items .item{
+    border: 2px solid #FF5B83;
+    padding: 30px 25px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.facilities .facility_items .item:hover{
+    background-color: #FF5B83;
+}
+
+
+
+.facilities .facility_items .item i{
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #FF5B83;
+}
+
+.facilities .facility_items .item .facility{
+    font-size: 18px;
+    color: #444;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.facilities .facility_items .item:hover i{
+    color: #fff;
+}
+
+.facilities .facility_items .item:hover .facility{
+    color: #fff;
+}
+
+
+
+.member_registration h2{
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    color: #555;
+    margin-bottom: 30px;    
+}
+
+.member_registration .form-group label{
+    font-weight: 600;
+}

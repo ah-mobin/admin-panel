@@ -1,8 +1,8 @@
 
     <div class="top_navigation"> <!-- navigation section start -->
         <div class="left_nav">
-            <a href="">Login</a>
-            <a href="">Join Us</a>
+            <a href="{{ route('front.login') }}">Login</a>
+            <a href="{{ route('front.join_us') }}">Join Us</a>
         </div>
 
         <div class="right_nav">

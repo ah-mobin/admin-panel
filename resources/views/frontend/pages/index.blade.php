@@ -10,9 +10,9 @@
                         <div class="banner-info">
                             <div class="container">
                                 <div class="banner-info-bg text-left">
-                                    <h5>Welcome to <br>
-                                    Remittance Fighters<br>
-                                    Of Bangladesh</h5>
+                                    <h5>Welcome to </h5>
+                                    <h3>Remittance Fighters</h3>
+                                    <h5>Of Bangladesh</h5>
                                 </div>
                             </div>
                         </div>
@@ -22,10 +22,10 @@
             <div class="item">
                     <div class="slider-info  banner-view banner-top1 bg bg2">
                         <div class="banner-info">
-                            <div class="container p-0 m-0">
+                            <div class="container">
                                 <div class="banner-info-bg text-left">
                                     <h5>Welcome to </h5>
-                                    <h5>Remittance Fighters</h5>
+                                    <h3>Remittance Fighters</h3>
                                     <h5>Of Bangladesh</h5>
                                 </div>
                             </div>
@@ -36,10 +36,10 @@
                 <li>
                     <div class="slider-info banner-view banner-top2 bg bg2">
                         <div class="banner-info">
-                            <div class="container p-0 m-0">
+                            <div class="container">
                                 <div class="banner-info-bg text-left">
                                     <h5>Welcome to </h5>
-                                    <h5>Remittance Fighters</h5>
+                                    <h3>Remittance Fighters</h3>
                                     <h5>Of Bangladesh</h5>
                                 </div>
                             </div>
@@ -47,21 +47,8 @@
                     </div>
                 </li>
             </div>
-            <div class="item">
-                <li>
-                    <div class="slider-info banner-view banner-top3 bg bg2">
-                        <div class="banner-info">
-                            <div class="container p-0 m-0">
-                                <div class="banner-info-bg text-left">
-                                    <h5>Welcome to </h5>
-                                    <h5>Remittance Fighters</h5>
-                                    <h5>Of Bangladesh</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </div>
+
+            
         </div>
         <div class="scrollhny-btn">
             <a class="btn-btmhny scroll" href="#about">

@@ -20,6 +20,10 @@ Route::get('/donation',[PageController::class,'donation'])->name('front.donation
 Route::get('/cloud-investment',[PageController::class,'investment'])->name('front.investment');
 Route::get('/notices',[PageController::class,'notice'])->name('front.notice');
 Route::get('/one-stop-service',[PageController::class,'oneStopService'])->name('front.service');
+Route::get('/join-with-us',[PageController::class,'joinWithUs'])->name('front.join_us');
+Route::post('/joined',[PageController::class,'memberSigned'])->name('member.joined');
+
+Route::get('/login',[PageController::class,'login'])->name('front.login');
 
 
 

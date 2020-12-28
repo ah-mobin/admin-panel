@@ -47,4 +47,19 @@ class PageController extends Controller
     public function regionalsCommittee(){
         return view('frontend.pages.regional_committee');
     }
+
+
+    public function joinWithUs(){
+        return view('frontend.pages.join_us');
+    }
+
+    public function memberSigned(Request $request){
+        session()->flash('success','Thanks For Joining With Us');
+        return redirect()->back();
+    }
+
+
+    public function login(){
+        return view('frontend.pages.login');
+    }
 }
