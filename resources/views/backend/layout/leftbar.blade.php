@@ -24,14 +24,12 @@
                             </li>
 
                             <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="ion-ios7-cart"></i><span> Sales </span> <span class="menu-arrow"></span></a>
+                                <a href="javascript:void(0);" class="waves-effect"><i class="ion-ios7-cart"></i><span> Committe Page </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="#">Orders</a></li>
-                                    <li><a href="#">Recurring Profiles</a></li>
-                                    <li><a href="#">Invoice</a></li>
-                                    <li><a href="#">Transactions</a></li>
-                                    <li><a href="#">Shipping</a></li>
-                                    <li><a href="#">Returns</a></li>
+                                    <li><a href="#">Founding Team</a></li>
+                                    <li><a href="{{ route('executive.member') }}">Executive Committee</a></li>
+                                    <li><a href="{{ route('advisor.member') }}">Advisory Committee</a></li>
+                                    <li><a href="#">Regional Committe</a></li>
                                 </ul>
                             </li>
 

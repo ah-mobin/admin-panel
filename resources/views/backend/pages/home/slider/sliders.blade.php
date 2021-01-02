@@ -16,7 +16,7 @@
                 <div class="col-sm-12">
                     <h4 class="page-title">Sliders</h4>
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{ url('/admin') }}">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="{{ url('/dashboard') }}">Dashboard</a></li>
                         <li class="breadcrumb-item active">Sliders</li>
                     </ol>
                 </div>

@@ -39,7 +39,9 @@ html {
   }
   
   .w3l-main-slider .banner-view {
-    background: url(../images/fighters1.jpg) no-repeat center;
+    
+    background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
     height: 80vh;
     position: relative;

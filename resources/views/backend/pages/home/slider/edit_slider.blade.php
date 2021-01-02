@@ -53,7 +53,7 @@
                     <form action="{{ url('update/slider/'.$slider->id) }}" method="post" enctype="multipart/form-data">
                         @csrf
             
-                        <div class="modal-body">
+                        <!-- <div class="modal-body"> -->
             
                             <div class="form-group">
                                 <input type="text" name="slider_heading_one" class="form-control my-4" value="{{ $slider->slider_heading_one }}">
@@ -63,15 +63,21 @@
                                 <input type="text" name="slider_heading_three" class="form-control my-4" value="{{ $slider->slider_heading_three }}">
 
                                 <label for="oldImg">Current Slider Image</label><br>
-                                <img src="" class="img-responsive w-50"><br>
+                                <img src="{{ $slider->slider_image }}" class="img-responsive w-25"><br>
 
                                 <input type="hidden" name="slider_current_image" value="{{ $slider->slider_image }}">
 
                                 <input type="file" name="slider_image" class="form-control my-4" placeholder="Update Slider Image">
+                            </div>
 
+                            <div class="form-group">
+                                <label for="changeStatus">Status</label><br>
+                                <input type="radio" name="status" value="active" @if( $slider->status == 'active') checked @endif> Active
+
+                                <input type="radio" name="status" value="inactive" @if( $slider->status == 'inactive') checked @endif> Inactive
                             </div>
             
-                        </div>
+                        <!-- </div> -->
             
                         
                         <button type="submit" class="btn btn-success">Update Slider</button>

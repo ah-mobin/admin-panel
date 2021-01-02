@@ -10,7 +10,7 @@ use Storage;
 class HomePageController extends Controller
 {
     public function __construct(){
-        //
+        $this->middleware('auth');
     }
 
 
@@ -84,6 +84,7 @@ class HomePageController extends Controller
                 'slider_heading_one' => $request->slider_heading_one,
                 'slider_heading_two' => $request->slider_heading_two,
                 'slider_heading_three' => $request->slider_heading_three,
+                'status' => $request->status,
                 'slider_image' => $updatedSliderLocationPath,
             ]);
 
@@ -95,6 +96,7 @@ class HomePageController extends Controller
                 'slider_heading_one' => $request->slider_heading_one,
                 'slider_heading_two' => $request->slider_heading_two,
                 'slider_heading_three' => $request->slider_heading_three,
+                'status' => $request->status,
             ]);
 
             session()->flash('update_slider','Slider Update Successful');

@@ -3,12 +3,19 @@
 namespace App\Http\Controllers\Frontent;
 
 use App\Http\Controllers\Controller;
+use App\Models\HomeSlider;
+use App\Models\HomeGallery;
 use Illuminate\Http\Request;
+use App\Models\ExecutiveCommittee;
+use App\Models\AdvisorCommittee;
+use App\Models\ContactMessage;
 
 class PageController extends Controller
 {
     public function index(){
-        return view('frontend.pages.index');
+        $sliders = HomeSlider::where('status','active')->get();
+        $galleries = HomeGallery::where('status','active')->get();
+        return view('frontend.pages.index',compact('sliders','galleries'));
     }
 
     public function news(){
@@ -41,7 +48,15 @@ class PageController extends Controller
     }
 
     public function executivesCommittee(){
-        return view('frontend.pages.executive_committee');
+        $topLevel = ExecutiveCommittee::where('top_level',1)->select('name','post','country','photo')->first();
+        $allExecutives = ExecutiveCommittee::where('top_level',0)->select('name','post','country','photo','position')->orderBy('position','asc')->get();
+        return view('frontend.pages.executive_committee',compact('topLevel','allExecutives'));
+    }
+
+    public function advisoryCommittee(){
+        $topLevel = AdvisorCommittee::where('top_level',1)->select('name','post','country','photo')->first();
+        $allAdvisories = AdvisorCommittee::where('top_level',0)->select('name','post','country','photo','position')->orderBy('position','asc')->get();
+        return view('frontend.pages.advisory_committee',compact('topLevel','allAdvisories'));
     }
 
     public function regionalsCommittee(){
@@ -53,13 +68,35 @@ class PageController extends Controller
         return view('frontend.pages.join_us');
     }
 
-    public function memberSigned(Request $request){
-        session()->flash('success','Thanks For Joining With Us');
-        return redirect()->back();
-    }
-
 
     public function login(){
         return view('frontend.pages.login');
+    }
+
+
+    public function contactUs(){
+        return view('frontend.pages.contact_us');
+    }
+
+    public function contactMessageStore(Request $request){
+        $request->validate([
+            'contact_name' => 'required',
+            'contact_phone' => 'required',
+            'contact_country' => 'required',
+            'contact_passport' => 'required',
+            'contact_message' => 'required',
+        ]);
+
+
+        ContactMessage::create([
+            'contact_name' => $request->contact_name,
+            'contact_phone' => $request->contact_phone,
+            'contact_country' => $request->contact_country,
+            'contact_passport' => $request->contact_passport,
+            'contact_message' => $request->contact_message,
+        ]);
+
+        session()->flash('success','Thanks For Your Message');
+        return redirect()->back();
     }
 }

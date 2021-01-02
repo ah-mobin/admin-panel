@@ -1,7 +1,7 @@
 
     <div class="top_navigation"> <!-- navigation section start -->
         <div class="left_nav">
-            <a href="{{ route('front.login') }}">Login</a>
+            {{-- <a href="{{ route('front.login') }}">Login</a> --}}
             <a href="{{ route('front.join_us') }}">Join Us</a>
         </div>
 
@@ -39,9 +39,10 @@
                                         Committee
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #2D4662">
-                                      <a class="dropdown-item" href="{{ route('front.founders') }}">Founding Team</a>
+                                      <!-- <a class="dropdown-item" href="{{ route('front.founders') }}">Founding Team</a> -->
                                       <a class="dropdown-item" href="{{ route('front.executives') }}">Executive Committee</a>
-                                      <a class="dropdown-item" href="{{ route('front.regionals') }}">Regional Committee</a>
+                                      <a class="dropdown-item" href="{{ route('front.advisories') }}">Advisory Committee</a>
+                                      <!-- <a class="dropdown-item" href="{{ route('front.regionals') }}">Regional Committee</a> -->
                                     </div>
                                   </li>
 
@@ -57,9 +58,9 @@
                                     <a class="nav-link" href="{{ route('front.notice') }}">Notice</a>
                                 </li>
 
-                                <li class="nav-item">
+                                <!-- <li class="nav-item">
                                     <a class="nav-link" href="{{ route('front.investment') }}">Cloud Investment</a>
-                                </li>
+                                </li> -->
 
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('front.donation') }}">Donation</a>

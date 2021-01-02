@@ -12,9 +12,9 @@
 
             <div class="col-12 col-md-6 col-lg-6">
                 <div class="news_top_left">
-                    <h3>Farewell Party of 2020</h3>
+                    <h3>Celebration Party of 2021</h3>
                     <span>25/12/2020</span>
-                    <p>Remmitence Fighters of Bangladesh(RFB) is going to celebrate the end of 2020 on 31st night of December, 2020. This celebration will be celebrated virtually. All the respected members will join the live conversation. The program will start at BD time 10:00PM on Facebook official page.</p>
+                    <p>Remmitence Fighters of Bangladesh(RFB) is going to celebrate the New Year of 2021 on 1st January, 2021. This celebration will be celebrated virtually. All the respected members will join the live conversation. The program will start at BD time 09:00PM on Facebook official page and YouTube Chanel, RFB TV.</p>
                 </div>
             </div>
         </div>
@@ -22,7 +22,9 @@
 </section>
 
 <div class="nazar_vallay_add">
-    <img src="frontend/images/nozor_add.png" class="w-100" alt="">
+    <a href="https://www.facebook.com/NazarValleybd" target="_blank">
+        <img src="frontend/images/nozor_add.png" class="w-100" alt="">
+    </a>
 </div>
 
 

@@ -20,12 +20,12 @@
                 <div class="col-md-6 col-lg-6 col-12 pl-5">
                     
                     <div class="form-group">
-                        <label for="userEmail">User Email</label>
-                        <input type="email" name="email" class="form-control" required>
+                        <label for="userEmail">User Passport ID</label>
+                        <input type="text" name="text" class="form-control" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="password">password</label>
+                        <label for="password">Password</label>
                         <input type="password" name="password" class="form-control" required>
                     </div>
 

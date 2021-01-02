@@ -40,7 +40,7 @@
                         <div class="col-md-3 col-lg-3 col-6">
                             <div class="footer_links">
                                 <ul>
-                                    <li><a href="">Contact Us</a></li>
+                                    <li><a href="{{ route('front.contact') }}">Contact Us</a></li>
                                     <li><a href="">About Us</a></li>
                                 </ul>
                             </div>
@@ -58,11 +58,11 @@
 
                         <div class="social_links">
                             <ul>
-                                <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href=""><i class="fab fa-twitter"></i></a></li>
-                                <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
-                                <li><a href=""><i class="fab fa-youtube"></i></a></li>
-                                <li><a href=""><i class="fab fa-google-plus-g"></i></a></li>
+                                <li><a href="https://www.facebook.com/rfb20"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="https://twitter.com/FightersRfb"><i class="fab fa-twitter"></i></a></li>
+                                <!-- <li><a href=""><i class="fab fa-linkedin-in"></i></a></li> -->
+                                <li><a href="https://www.youtube.com/channel/UC5pz54PQ1TZJW24cFT9rrpg"><i class="fab fa-youtube"></i></a></li>
+                                <li><a href="mailto:rfb0620@gmail.com"><i class="fa fa-envelope"></i></a></li>
                             </ul>
                         </div>
                     </div>

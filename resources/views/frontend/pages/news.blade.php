@@ -39,7 +39,7 @@
 
 
 <section class="latest_news">
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col-md-9 col-lg-9 col-12">
                 <div class="news_section">
@@ -124,7 +124,7 @@
 
 
                 <div class="popular_news">
-                    <h4>Popular News</h4>
+                    <h4>Popular Quotes</h4>
 
                     <div class="popular_item">
                         <div class="row">
