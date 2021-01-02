@@ -19,6 +19,8 @@
                                 <a href="javascript:void(0);" class="waves-effect"><i class="ion-pricetags"></i> <span> Home Page </span> <span class="menu-arrow"></span> </a>
                                 <ul class="list-unstyled">
                                     <li><a href="{{ route('sliders') }}">Slider</a></li>
+                                    <li><a href="{{ route('abouts') }}">About</a></li>
+                                    <li><a href="{{ route('vision.mission') }}">Vision & Mission</a></li>
                                     <li><a href="{{ route('galleries') }}">Gallery</a></li>
                                 </ul>
                             </li>

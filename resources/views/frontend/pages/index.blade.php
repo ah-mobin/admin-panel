@@ -45,8 +45,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="about_content">
-                                <p>Welcome to <b>Remittance Fighters of Bangladesh(RFB)</b>. It’s a non-political organization of Bangladeshis living abroad, who works there and sent their income to country. There are about 15 Million Bangladeshis all over the world. RFB is the bridge between Bangladesh and the Bangladeshi workers living abroad.</p>
-                                <p>Foreign currency remitted by the Bangladeshis constitutes a large part of national economy: amounting almost high as 15% of GDP in some year. For sending hefty remittance, each remittance fighter is a 'Brand Ambassador' aboard for our homeland.</p>
+                                {!! $about->about_content !!}
                             </div>
                         </div>
 
@@ -56,7 +55,7 @@
                             <h2>VISION & MISSION</h2>
                         </div>
 
-                        <h4>Our main missions and visions are.</h4>
+                        {{-- <h4>Our main missions and visions are.</h4>
                         
                         <div class="vision_mission_content">
                             <ol style="list-style: none; padding-left: 0;">
@@ -64,7 +63,9 @@
                                 <li>Unite successful Bangladeshi origin under one Global platform to share ideas, leverage knowledge, connect with each other, create new ventures, create awareness of RFB’s issues.</li>
                                 <li>Bridge the gap between RFB’s and Bangladesh government so that Bangladesh can take advantages of her RFB’s knowledge and expertise for development of Bangladesh as well as RFB get the opportunity to communicate and dialog with government officials in policy level to resolve NRB'S related issues.</li>
                             </ol>
-                        </div>
+                        </div> --}}
+
+                        {!! $visionMission->vision_mission_content !!}
                         </div>
                     </div>
                     

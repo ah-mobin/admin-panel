@@ -10,11 +10,11 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
-            <div class="trustee_body">
-                <h3>Executive Committee</h3>
+            <div class="trustee_body text-center">
+                <h3 class="mb-5">Executive Committee</h3>
 
                 <div class="trustees">
-
+  
                 <div class="row">
                     <div class="col-md-4 col-lg-4"></div>
                     <div class="col-md-4 col-lg-4 col-sm-12 col-12">
@@ -35,6 +35,7 @@
                         </div>
                     </div>
                 </div>
+
 
                 <div class="row">
                     

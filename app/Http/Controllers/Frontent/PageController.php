@@ -8,14 +8,19 @@ use App\Models\HomeGallery;
 use Illuminate\Http\Request;
 use App\Models\ExecutiveCommittee;
 use App\Models\AdvisorCommittee;
+use App\Models\Founder;
 use App\Models\ContactMessage;
+use App\Models\About;
+use App\Models\VisionMission;
 
 class PageController extends Controller
 {
     public function index(){
         $sliders = HomeSlider::where('status','active')->get();
+        $about = About::where('status','enabled')->first();
+        $visionMission = VisionMission::where('status','enabled')->first();
         $galleries = HomeGallery::where('status','active')->get();
-        return view('frontend.pages.index',compact('sliders','galleries'));
+        return view('frontend.pages.index',compact('sliders','about','visionMission','galleries'));
     }
 
     public function news(){
@@ -44,7 +49,9 @@ class PageController extends Controller
     }
 
     public function foundersCommittee(){
-        return view('frontend.pages.founding_team');
+        $topLevel = Founder::where('top_level',1)->select('name','post','country','photo')->first();
+        $allFounders = Founder::where('top_level',0)->select('name','post','country','photo','position')->orderBy('position','asc')->get();
+        return view('frontend.pages.founding_team',compact('topLevel','allFounders'));
     }
 
     public function executivesCommittee(){
@@ -57,6 +64,10 @@ class PageController extends Controller
         $topLevel = AdvisorCommittee::where('top_level',1)->select('name','post','country','photo')->first();
         $allAdvisories = AdvisorCommittee::where('top_level',0)->select('name','post','country','photo','position')->orderBy('position','asc')->get();
         return view('frontend.pages.advisory_committee',compact('topLevel','allAdvisories'));
+    }
+
+    public function foundingTeam(){
+        
     }
 
     public function regionalsCommittee(){
