@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Frontent;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Models\HomeSlider;
 use App\Models\HomeGallery;
-use Illuminate\Http\Request;
 use App\Models\ExecutiveCommittee;
 use App\Models\AdvisorCommittee;
 use App\Models\Founder;

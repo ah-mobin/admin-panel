@@ -55,16 +55,6 @@
                             <h2>VISION & MISSION</h2>
                         </div>
 
-                        {{-- <h4>Our main missions and visions are.</h4>
-                        
-                        <div class="vision_mission_content">
-                            <ol style="list-style: none; padding-left: 0;">
-                                <li>Serve the RFB's across the global.</li>
-                                <li>Unite successful Bangladeshi origin under one Global platform to share ideas, leverage knowledge, connect with each other, create new ventures, create awareness of RFB’s issues.</li>
-                                <li>Bridge the gap between RFB’s and Bangladesh government so that Bangladesh can take advantages of her RFB’s knowledge and expertise for development of Bangladesh as well as RFB get the opportunity to communicate and dialog with government officials in policy level to resolve NRB'S related issues.</li>
-                            </ol>
-                        </div> --}}
-
                         {!! $visionMission->vision_mission_content !!}
                         </div>
                     </div>
@@ -107,7 +97,7 @@
                 </div>
             @endforeach 
 
-            <div class="col-md-4">
+            {{-- <div class="col-md-4">
                 <a href="frontend/images/2.jpg" data-lightbox="example-set" class="mb-4"
                 data-title="lorem ipsum dolor sit amet">
                 <figure>
@@ -133,7 +123,7 @@
                 <img src="frontend/images/7.jpg" alt="product" class="img-fluid">
                 </figure>
                 </a>
-            </div>
+            </div> --}}
 
         </div>
     </div>
