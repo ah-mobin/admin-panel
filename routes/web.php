@@ -8,6 +8,8 @@ use App\Http\Controllers\Backend\VisionMissionController;
 use App\Http\Controllers\Backend\MemberController;
 use App\Http\Controllers\Backend\ExecutiveCommitteePageController;
 use App\Http\Controllers\Backend\AdvisorCommitteeController;
+use App\Http\Controllers\Backend\NewsController;
+use App\Http\Controllers\Backend\QuoteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -87,3 +89,19 @@ Route::get('/advisor-members',[AdvisorCommitteeController::class,'advisorCommitt
 Route::post('/advisor-member-store',[AdvisorCommitteeController::class,'advisorCommitteeStore'])->name('store.advisor');
 Route::get('advisor/member/edit/{id}',[AdvisorCommitteeController::class,'advisorCommitteeEdit']);
 Route::post('update/advisor/{id}',[AdvisorCommitteeController::class,'advisorCommitteeUpdate']);
+
+
+/// news page
+
+//latest news
+Route::get('latest-news',[NewsController::class,'news'])->name('latest.news');
+Route::post('latest-news',[NewsController::class,'store'])->name('store.news');
+Route::get('news/details/{id}',[NewsController::class,'show']);
+Route::get('news/edit/{id}',[NewsController::class,'edit']);
+Route::post('update/news/{id}',[NewsController::class,'update']);
+
+//popular quotes
+Route::get('popular-quotes',[QuoteController::class,'quotes'])->name('popular.quotes');
+Route::post('popular-quote',[QuoteController::class,'store'])->name('store.quote');
+Route::get('quote/edit/{id}',[QuoteController::class,'edit']);
+Route::post('update/quote/{id}',[QuoteController::class,'update']);

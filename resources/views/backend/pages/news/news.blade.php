@@ -1,10 +1,13 @@
 @extends('backend.layout.master')
-
 @section('title','All News')
-
 @section('main')
+<script src="https://cdn.ckeditor.com/ckeditor5/19.0.0/classic/ckeditor.js"></script>
 
-
+<style>
+    .ck.ck-editor__editable_inline{
+        color:#222;
+    }
+</style>
 
 <div class="content-page">
     <!-- Start content -->
@@ -48,8 +51,8 @@
             <div class="row">
                 <div class="col-sm-12">
 
-                    <button type="button" class="btn btn-primary mb-5" data-toggle="modal" data-target="#addNewAdvMember">
-                       Add New Member
+                    <button type="button" class="btn btn-primary mb-5" data-toggle="modal" data-target="#addNewNews">
+                       Add New News
                     </button>
 
                     <table class="table table-striped table-bordered table-hover">
@@ -67,18 +70,20 @@
         
         
                         <tbody>
-                            @foreach($advisors as $member)
+                            @foreach($allNews as $news)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td><img src="{{ $member->photo }}" width="100px" alt=""></td>
-                                    <td>{{ $member->position }}</td>
-                                    <td>{{ $member->name }}</td>
-                                    <td>{{ $member->post }}</td>
-                                    <td>{{ $member->country }}</td>
+                                    <td><img src="{{ $news->news_cover }}" width="100px" alt=""></td>
+                                    <td>{{ $news->news_headline }}</td>
+                                    <td>{{ $news->name }} <br> <small style="color:#666">{{ $news->role }}</small> </td>
+                                    <td>{{ $news->published_date }}</td>
+                                    <td>{{ $news->status }}</td>
                                     <td>
-                                        <a href="{{ url('advisor/member/view/'.$member->id) }}"> <i class="fa fa-eye mr-4"></i> </a>
-                                        <a href="{{ url('advisor/member/edit/'.$member->id) }}"> <i class="fa fa-edit mr-4"></i> </a>
-                                        <a href="{{ url('advisor/member/remove/'.$member->id) }}"> <i class="fa fa-trash"></i> </a>
+                                        <a href="{{ url('news/details/'.$news->id) }}"> <i class="fa fa-eye mr-4"></i> </a>
+                                        @if($news->publisher_id == Auth::id() || Auth::user()->role == 'admin')
+                                            <a href="{{ url('news/edit/'.$news->id) }}"> <i class="fa fa-edit mr-4"></i> </a>
+                                            <a href="{{ url('news/remove/'.$news->id) }}"> <i class="fa fa-trash"></i> </a>
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach
@@ -95,72 +100,50 @@
 
   
   <!-- Modal -->
-  <div class="modal fade" id="addNewAdvMember" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="addNewAdvMemberLabel" aria-hidden="true">
+  <div class="modal fade" id="addNewNews" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="addNewNewsLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="addNewAdvMemberLabel">Add New Member</h5>
+          <h5 class="modal-title" id="addNewNewsLabel">Add News</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
 
-        <form action="{{ route('store.advisor') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('store.news') }}" method="post" enctype="multipart/form-data">
             @csrf
 
             <div class="modal-body">
 
-                <div class="form-group">
-                    <input type="text" name="name" class="form-control my-4 @error('name') is-invalid @enderror" placeholder="Member Full Name (required)">
+                <div class="form-group my-5">
+                    <label for="">News Headline:</label>
+                    <input type="text" name="news_headline" class="form-control" placeholder="News Headline (required)">
                 </div>
 
-                @error('name')
-                    <span class="invalid-feedback" role="alert">
-                        <strong style="color:red">{{ $message }}</strong>
-                    </span>
-                @enderror
-
-                <div class="form-group">
-                    <input type="text" name="post" class="form-control my-4" placeholder="Post Details">
+                <div class="form-group my-5">
+                    <label for="">Short Description:</label>
+                    <textarea name="short_desc" class="form-control"></textarea>
                 </div>
 
-                <div class="form-group">
-                    <input type="text" name="country" class="form-control my-4" placeholder="Country">
+                <div class="form-group my-5">
+                    <label for="">News Details:</label>
+                    <textarea name="news_details" id="editor"></textarea>
                 </div>
 
-                <div class="form-group">
-                    <input type="file" name="photo" class="form-control my-4">
+                <div class="form-group my-5">
+                    <label for="">News Link:</label>
+                    <input type="text" name="news_link" class="form-control">
                 </div>
 
-                <div class="form-group">
-                    <label for="topLevel">What To Place Him/Her at First of YOur List?</label><br>
-                    <input type="radio" name="top_level" value="1"> Yes &nbsp;
-                    <input type="radio" name="top_level" value="0" checked> No
+                <div class="form-group my-5">
+                    <input type="file" name="news_cover" class="form-control my-4">
                 </div>
-
-                <div class="form-group">
-                    <label for="position">Position:</label><br>
-                    <input type="number" name="position" class="form-control @error('position') is-invalid @enderror" value="{{ old('position') }}">
-                </div>
-
-                @error('position')
-                    <span class="invalid-feedback" role="alert">
-                        <strong style="color:red">{{ $message }}</strong>
-                    </span>
-                @enderror
-
-                <div class="form-group">
-                    <input type="text" name="phone_number" class="form-control my-4" placeholder="Phone Number (optional)">
-                </div>
-
-                <div class="form-group">
-                    <input type="text" name="email" class="form-control my-4" placeholder="Email Address (optional)">
-                </div>
+                
             </div>
 
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-success">Add New</button>
+              <button type="submit" class="btn btn-success">Add News</button>
             </div>
 
         </form>
@@ -168,5 +151,14 @@
     </div>
   </div>
 
+
+
+<script>
+    ClassicEditor
+    .create( document.querySelector( '#editor' ) )
+    .catch( error => {
+        console.error( error );
+    } );
+</script>
 
 @endsection

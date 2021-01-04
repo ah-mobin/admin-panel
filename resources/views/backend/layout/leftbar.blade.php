@@ -36,10 +36,10 @@
                             </li>
 
                             <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="md-thumbs-up-down"></i> <span> Vendors </span> <span class="menu-arrow"></span> </a>
+                                <a href="javascript:void(0);" class="waves-effect"><i class="md-thumbs-up-down"></i> <span> News Page </span> <span class="menu-arrow"></span> </a>
                                 <ul class="list-unstyled">
-                                    <li><a href="#">Vendors List</a></li>
-                                    <li><a href="#">Vendor Requests</a></li>
+                                    <li><a href="{{ route('latest.news') }}">Latest News</a></li>
+                                    <li><a href="{{ route('popular.quotes') }}">Popular Quotes</a></li>
                                 </ul>
                             </li>
 

@@ -38,9 +38,9 @@ class AboutController extends Controller
 
     public function update(Request $request, $id){
 
-        if($request->status == 'enabled'){
-            About::update(['status' => 'disabled']);
-        }
+        // if($request->status == 'enabled'){
+        //     About::update(['status' => 'disabled']);
+        // }
         
         About::where('id',$id)->update([
             'about_content' => $request->about_content,

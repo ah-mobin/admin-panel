@@ -11,7 +11,9 @@ use App\Models\AdvisorCommittee;
 use App\Models\Founder;
 use App\Models\ContactMessage;
 use App\Models\About;
+use App\Models\Quote;
 use App\Models\VisionMission;
+use Illuminate\Support\Facades\DB;
 
 class PageController extends Controller
 {
@@ -24,7 +26,9 @@ class PageController extends Controller
     }
 
     public function news(){
-        return view('frontend.pages.news');
+        $news = DB::table('news')->join('users','news.publisher_id','users.id')->select('news.id','news.news_headline','short_desc','news_link','news_cover','published_date','users.name')->where('news.status','published')->get();
+        $quotes = Quote::select('quote_speech','speaker','speaker_photo')->where('status','enabled')->get();
+        return view('frontend.pages.news',compact('news','quotes'));
     }
 
     public function activities(){

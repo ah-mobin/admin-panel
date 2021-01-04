@@ -11,10 +11,11 @@
     <div class="row">
         <div class="col-12">
             <div class="trustee_body text-center">
-                <h3 class="mb-5">Executive Committee</h3>
+                <h3 class="mb-5">Advisory Committee</h3>
 
                 <div class="trustees">
   
+                @if($topLevel>0)
                 <div class="row">
                     <div class="col-md-4 col-lg-4"></div>
                     <div class="col-md-4 col-lg-4 col-sm-12 col-12">
@@ -35,7 +36,7 @@
                         </div>
                     </div>
                 </div>
-
+                @endif
 
                 <div class="row">
                     

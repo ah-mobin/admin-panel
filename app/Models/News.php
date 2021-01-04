@@ -11,4 +11,8 @@ class News extends Model
     use HasFactory, SoftDeletes;
 
     protected $guarded = [];
+
+    public function publisher(){
+        return $this->belongsTo(User::class,'publisher_id ');
+    }
 }

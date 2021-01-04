@@ -3,7 +3,13 @@
 @section('title','Edit News')
 
 @section('main')
+<script src="https://cdn.ckeditor.com/ckeditor5/19.0.0/classic/ckeditor.js"></script>
 
+<style>
+    .ck.ck-editor__editable_inline{
+        color:#222;
+    }
+</style>
 
 <div class="content-page">
     <div class="content">
@@ -15,7 +21,7 @@
                     <h4 class="page-title">Edit News</h4>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ url('/dashboard') }}">Dashboard</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('') }}">News</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('latest.news') }}">News</a></li>
                         <li class="breadcrumb-item active">Edit News</li>
                     </ol>
                 </div>
@@ -43,75 +49,47 @@
             @endif   
 
             <div class="row">
-                <div class="col-12">
-                    <form action="{{ url('update/advisor/'.$advisor->id) }}" method="post" enctype="multipart/form-data">
+                <div class="col-10">
+                    <form action="{{ url('update/news/'.$news->id) }}" method="post" enctype="multipart/form-data">
                         @csrf
                     
-                        <div class="modal-body">
-                    
-                            <div class="form-group">
-                                <label for="name">Name:</label>
-                                <input type="text" name="name" class="form-control my-4 @error('name') is-invalid @enderror" value="{{ $advisor->name }}">
+                        <div class="form-group my-5">
+                            <label for="">News Headline:</label>
+                            <input type="text" name="news_headline" class="form-control" value="{{ $news->news_headline }}">
+                        </div>
 
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong style="color:red">{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                        <div class="form-group my-5">
+                            <label for="">Short Description:</label>
+                            <textarea name="short_desc" class="form-control">{{ $news->short_desc }}</textarea>
+                        </div>
 
-                            </div>
-                    
-                            <div class="form-group">
-                                <label for="">Post:</label>
-                                <input type="text" name="post" class="form-control my-4" value="{{ $advisor->post }}">
-                            </div>
-                    
-                            <div class="form-group">
-                                <label for="">Country:</label>
-                                <input type="text" name="country" class="form-control my-4" value="{{ $advisor->country }}">
-                            </div>
+                        <div class="form-group my-5">
+                            <label for="">News Details:</label>
+                            <textarea name="news_details" id="editor">{{ $news->news_details }}</textarea>
+                        </div>
 
-                            <div class="form-group">
-                                <label for="">Photo:</label><br>
-                                <img src="{{ $advisor->photo }}" alt="" height="120px">
-                                <input type="hidden" name="old_image" value="{{ $advisor->photo }}">
-                            </div>
-                    
-                            <div class="form-group">
-                                <label for="">Update Photo:</label>
-                                <input type="file" name="photo" class="form-control my-4">
-                            </div>
-                    
-                            <div class="form-group">
-                                <label for="topLevel">What To Place Him/Her at First of YOur List?</label><br>
-                                <input type="radio" name="top_level" value="1" @if($advisor->top_level == 1) checked @endif> Yes &nbsp;
-                                <input type="radio" name="top_level" value="0" @if($advisor->top_level == 0) checked @endif> No
-                            </div>
+                        <div class="form-group my-5">
+                            <label for="">News Link:</label>
+                            <input type="text" name="news_link" class="form-control" value="{{ $news->news_link }}">
+                        </div>
 
-                            <div class="form-group">
-                                <label for="position">Position:</label><br>
-                                <input type="number" name="position" class="form-control @error('position') is-invalid @enderror" value="{{ $advisor->position }}">
+                        <div class="form-group my-5">
+                            <label for="">Update Status</label><br>
+                            <input type="radio" name="status" value="disabled" @if($news->status == 'disabled') checked @endif> Disable
+                            <input type="radio" name="status" value="published" @if($news->status == 'published') checked @endif> Publish
+                        </div>
 
-                                @error('position')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong style="color:red">{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                    
-                            <div class="form-group">
-                                <label for="">Phone Number:</label>
-                                <input type="text" name="phone_number" class="form-control my-4" value="{{ $advisor->phone_number }}">
-                            </div>
-                    
-                            <div class="form-group">
-                                <label for="">Email:</label>
-                                <input type="text" name="email" class="form-control my-4" value="{{ $advisor->email }}">
-                            </div>
+                        <div class="form-group">
+                            <label for="">Current Cover Image</label><br>
+                            <img src="{{ $news->news_cover }}" class="w-25" alt="">
+                            <input type="hidden" name="old_cover" value="{{ $news->news_cover }}">
+                        </div>
+                        <div class="form-group my-5">
+                            <label for="">Update Cover Image:</label>
+                            <input type="file" name="news_cover" class="form-control my-4">
                         </div>
                     
-                       
-                        <button type="submit" class="btn btn-success">Add New</button>
+                        <button type="submit" class="btn btn-success">Update</button>
             
                     </form>
                 </div>
@@ -121,5 +99,13 @@
 </div>
 
 
+
+<script>
+    ClassicEditor
+    .create( document.querySelector( '#editor' ) )
+    .catch( error => {
+        console.error( error );
+    } );
+</script>
 
 @endsection
