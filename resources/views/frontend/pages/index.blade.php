@@ -1,4 +1,5 @@
 @extends('frontend.layout.master')
+@section('title','Home')
 @section('content')
 
 <section class="w3l-main-slider position-relative" id="home">
@@ -35,99 +36,40 @@
 </section>
 
 
+<marquee width="100%" direction="left" scrollamount="2" class="py-2" style="font-size: 20px; background-color: #444; color: #fff; font-weight: 600">
+    Welcome To NRB Global
+</marquee>
+
+
 
 
 <section id="about">
     <div class="container my-5">
         <div class="row">
-                <div class="col-md-8 col-lg-8 col-sm-12 col-12">
+            <div class="col-12">
 
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="about_content">
-                                {!! $about->about_content !!}
-                            </div>
-                        </div>
-
-                        <div class="col-12">
-                        <div class="vision_mission text-center mt-5 mb-4">
-                            <h5>OUR</h5>
-                            <h2>VISION & MISSION</h2>
-                        </div>
-
-                        {!! $visionMission->vision_mission_content !!}
+                <div class="row">
+                    <div class="col-12">
+                        <div class="about_content">
+                            {!! $about->about_content !!}
                         </div>
                     </div>
-                    
                 </div>
-                <div class="col-md-4 col-lg-4 col-sm-12 col-12 text-right">
-                    <div class="add">
-                        <a href="" target="_blank">
-                            <img src="frontend/images/Rectangle 168.png" class="img-fluid w-50" alt="">
-                        </a>
-                   
-                    </div>
-                </div>  
+                
+            </div>
 
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="vision_mission text-center mt-5 mb-4">
+                    <h5>OUR</h5>
+                    <h2>VISION & MISSION</h2>
+                </div>
+
+                {!! $visionMission->vision_mission_content !!}
             </div>
         </div>
+
     </div> 
 </section>
-
-
-
-<div class="container">
-    <div class="gallery">
-        <h3 class="mb-4">Gallery</h3>
-    
-        <div class="row">
-            
-            @foreach($galleries as $gallery)
-                <div class="col-md-4">
-                    <a href="{{  $gallery->gallery_image_location }}" data-lightbox="example-set" class="mb-4">
-                    <figure>
-                    <img src="{{  $gallery->gallery_image_location }}" alt="" class="img-fluid">
-                    </figure>
-                    </a>
-                    {{-- <a href="frontend/images/1.jpg" data-lightbox="example-set" class="mb-md-0 mb-4" data-title="lorem ipsum dolor sit amet">
-                    <figure>
-                    <img src="frontend/images/1.jpg" alt="product" class="img-fluid">
-                    </figure>
-                    </a> --}}
-                </div>
-            @endforeach 
-
-            {{-- <div class="col-md-4">
-                <a href="frontend/images/2.jpg" data-lightbox="example-set" class="mb-4"
-                data-title="lorem ipsum dolor sit amet">
-                <figure>
-                <img src="frontend/images/2.jpg" alt="product" class="img-fluid">
-                </figure>
-                </a>
-                <a href="frontend/images/3.jpg" data-lightbox="example-set" class="mb-md-0 mb-4" data-title="lorem ipsum dolor sit amet">
-                <figure>
-                <img src="frontend/images/3.jpg" alt="product" class="img-fluid">
-                </figure>
-                </a>
-            </div>
-
-            <div class="col-md-4">
-                <a href="frontend/images/4.jpg" data-lightbox="example-set" class="mb-4"
-                data-title="lorem ipsum dolor sit amet">
-                <figure>
-                <img src="frontend/images/4.jpg" alt="product" class="img-fluid">
-                </figure>
-                </a>
-                <a href="frontend/images/img4.png" data-lightbox="example-set" data-title="lorem ipsum dolor sit amet">
-                <figure>
-                <img src="frontend/images/7.jpg" alt="product" class="img-fluid">
-                </figure>
-                </a>
-            </div> --}}
-
-        </div>
-    </div>
-</div>
-
-
-@endsection

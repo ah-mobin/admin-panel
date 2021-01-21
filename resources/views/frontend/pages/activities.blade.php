@@ -1,5 +1,5 @@
 @extends('frontend.layout.master')
-@section('title','')
+@section('title','Activities')
 
 @section('content')
 
@@ -7,28 +7,19 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 col-md-6 col-lg-6">
-                <img src="frontend/images/Rectangle.png" class="img-fluid" alt="">
+                <img src="{{ asset('frontend/images/Rectangle.png') }}" class="img-fluid" alt="">
             </div>
 
             <div class="col-12 col-md-6 col-lg-6">
                 <div class="news_top_left">
-                    <h3>Celebration Party of 2021</h3>
-                    <span>25/12/2020</span>
-                    <p>Remmitence Fighters of Bangladesh(RFB) is going to celebrate the New Year of 2021 on 1st January, 2021. This celebration will be celebrated virtually. All the respected members will join the live conversation. The program will start at BD time 09:00PM on Facebook official page and YouTube Chanel, RFB TV.</p>
+                    <h3>Grand Opening Party</h3>
+                    <span>15/09/2020</span>
+                    <p>Non Resident Bangladeshi – Global(NRB Global) is going to celebrate the grand opening at 27th September, 2020. This celebration will be celebrated virtually. All the respected members will join the live conversation. The program will start at BD time 11:00PM on Facebook official page and YouTube Chanel, NRB Global.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-<div class="nazar_vallay_add">
-    <a href="https://www.facebook.com/NazarValleybd" target="_blank">
-        <img src="frontend/images/nozor_add.png" class="w-100" alt="">
-    </a>
-</div>
-
-
-
 
     <div class="activity_section">
         <section class="container-fluid">

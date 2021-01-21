@@ -22,9 +22,6 @@ class HomePageController extends Controller
 
     public function sliderAdded(Request $request){
         $request->validate([
-            'slider_heading_one' => 'required|max:64',
-            'slider_heading_two' => 'required|max:64',
-            'slider_heading_three' => 'required|max:64',
             'slider_image' => 'required|mimes:jpg,JPEG,PNG,png,WEBP,webp',
         ]);
 

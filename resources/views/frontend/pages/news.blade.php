@@ -40,12 +40,12 @@
                             @foreach($news as $single)
                             <div class="col-md-6 col-lg-4 col-sm-6 col-12">
                                 <div class="card">
-                                    <img class="card-img-top" src="{{ $single->news_cover }}" alt="Card image cap">
+                                    <img class="card-img-top" src="{{ $single->news_cover }}" height="200"  alt="{{ $single->news_headline }}">
                                     <div class="card-body">
-                                        <span>{{ Carbon\Carbon::make($single->published_date)->format('d/m/y') }}</span>
+                                        <span style="font-size: 14px">{{ Carbon\Carbon::make($single->published_date)->format('d M, y') }}</span>
                                         <h5 class="card-title my-2">{{ $single->news_headline }}</h5>
-                                        <p class="card-text my-2">{{ $single->short_desc }}</p>
-                                        <a href="{{ $single->news_link }}" target="_blank">See details <i class="fa fa-arrow-right"></i></a>
+                                        <p class="card-text my-2">{{ substr($single->short_desc,0,25) }}</p>
+                                        <a href="{{ url('news-details/'.$single->news_slug) }}">See details <i class="fa fa-arrow-right"></i></a>
                                     </div>
                                   </div>
                             </div>

@@ -15,11 +15,11 @@ class CreateHomeSlidersTable extends Migration
     {
         Schema::create('home_sliders', function (Blueprint $table) {
             $table->id();
-            $table->string('slider_heading_one',64);
-            $table->string('slider_heading_two',64);
+            $table->string('slider_heading_one',64)->nullable();
+            $table->string('slider_heading_two',64)->nullable();
             $table->string('slider_heading_three',64)->nullable();
             $table->string('slider_image');
-            $table->string('status',10)->default('inactive');
+            $table->string('status',10)->default('active');
             $table->timestamps();
             $table->softDeletes();
         });

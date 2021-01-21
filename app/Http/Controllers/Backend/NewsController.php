@@ -24,7 +24,7 @@ class NewsController extends Controller
 
     public function store(Request $request){
         $request->validate([
-            'news_headline' => 'required',
+            'news_headline' => 'required|unique:news',
             'short_desc' => 'required',
             'news_cover' => 'required',
         ]);
@@ -43,7 +43,6 @@ class NewsController extends Controller
             'news_link' => trim($request->news_link),
             'news_cover' => $fileLocation,
             'publisher_id' => Auth::id(),
-            // 'published_date' => Carbon::now(),
         ]);
 
         session()->flash('success','News Added Successful');

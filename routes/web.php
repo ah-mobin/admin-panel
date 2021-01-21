@@ -20,6 +20,7 @@ use App\Http\Controllers\Backend\QuoteController;
 
 Route::get('/',[PageController::class,'index'])->name('front.index');
 Route::get('/news',[PageController::class,'news'])->name('front.news');
+Route::get('/news-details/{slug}',[PageController::class,'newsDetails']);
 Route::get('/activities',[PageController::class,'activities'])->name('front.activities');
 Route::get('/founding-team',[PageController::class,'foundersCommittee'])->name('front.founders');
 Route::get('/executive-committe',[PageController::class,'executivesCommittee'])->name('front.executives');

@@ -2,6 +2,14 @@
 @section('title','Show News Details')
 @section('main')
 
+<script src="https://cdn.ckeditor.com/ckeditor5/19.0.0/classic/ckeditor.js"></script>
+
+<style>
+    .ck.ck-editor__editable_inline{
+        color:#222;
+    }
+</style>
+
 
 <div class="content-page">
     <!-- Start content -->
@@ -20,42 +28,29 @@
                 </div>
             </div>
 
+
+            <img src="{{ $news->news_cover }}" class="img-fluid" alt="">
+            <h2>{{ $news->news_headline }}</h2>
+            <small><b>Author:</b> {{ $news->name }}</small>
+            <small><b>Status:</b> {{ $news->status }}</small>
+            <hr>
+            <h6>Short Description</h6>
+            <p>{{ $news->short_desc }}</p>
+
+            <hr>
+            <h6>Details News</h6>
+            {!! $news->news_details !!}
+                    
+
             <div class="row">
-                <div class="col-sm-12">
-                    <table class="table table-striped table-bordered">
-                        <tr>
-                            <td width="25%">News Cover</td>
-                            <td><img src="{{ $news->news_cover }}" height="100px"></td>
-                        </tr>
+                <div class="col-12">
+                    
+                    
 
+                    <table class="table table-responsive">
                         <tr>
-                            <td>News Headline</td>
-                            <td>{{ $news->news_headline }}</td>
-                        </tr>
-
-                        <tr>
-                            <td>Short Description</td>
-                            <td>{{ $news->short_desc }}</td>
-                        </tr>
-
-                        <tr>
-                            <td>News Details</td>
-                            <td>{{ $news->news_details }}</td>
-                        </tr>
-
-                        <tr>
-                            <td>News Link</td>
-                            <td><a href="{{ $news->news_link }}" target="_blank">Link</a></td>
-                        </tr>
-
-                        <tr>
-                            <td>Author</td>
-                            <td>{{ $news->name }}</td>
-                        </tr>
-
-                        <tr>
-                            <td>Status</td>
-                            <td>{{ $news->status }}</td>
+                            <td>Reference Link</td>
+                            <td><a href="{{ $news->news_link }}" target="_blank">{{ $news->news_link }}</a></td>
                         </tr>
 
                         <tr>
@@ -81,4 +76,12 @@
     </div>
 </div>
 
+
+<script>
+    ClassicEditor
+    .create( document.querySelector( '#editor' ) )
+    .catch( error => {
+        console.error( error );
+    } );
+</script>
 @endsection

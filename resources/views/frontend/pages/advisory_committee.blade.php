@@ -15,7 +15,7 @@
 
                 <div class="trustees">
   
-                @if($topLevel>0)
+                @if($topLevel->name)
                 <div class="row">
                     <div class="col-md-4 col-lg-4"></div>
                     <div class="col-md-4 col-lg-4 col-sm-12 col-12">

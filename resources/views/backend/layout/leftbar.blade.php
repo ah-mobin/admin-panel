@@ -10,13 +10,13 @@
                             <li class="text-muted menu-title">Navigation</li>
 
                             <li class="has_sub">
-                                <a href="{{ url('/admin') }}" class="waves-effect">
+                                <a href="{{ url('/dashboard') }}" class="waves-effect">
                                     <i class="ti-home"></i> <span>Dashboard</span>
                                 </a>
                             </li>
 
                             <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="ion-pricetags"></i> <span> Home Page </span> <span class="menu-arrow"></span> </a>
+                                <a href="javascript:void(0);" class="waves-effect"><i class="ion-home"></i> <span> Home Page </span> <span class="menu-arrow"></span> </a>
                                 <ul class="list-unstyled">
                                     <li><a href="{{ route('sliders') }}">Slider</a></li>
                                     <li><a href="{{ route('abouts') }}">About</a></li>
@@ -26,7 +26,7 @@
                             </li>
 
                             <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="ion-ios7-cart"></i><span> Committe Page </span> <span class="menu-arrow"></span></a>
+                                <a href="javascript:void(0);" class="waves-effect"><i class="ion-person-stalker"></i><span> Committe Page </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="#">Founding Team</a></li>
                                     <li><a href="{{ route('executive.member') }}">Executive Committee</a></li>
@@ -36,7 +36,7 @@
                             </li>
 
                             <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="md-thumbs-up-down"></i> <span> News Page </span> <span class="menu-arrow"></span> </a>
+                                <a href="javascript:void(0);" class="waves-effect"><i class="ion-ios7-paper-outline"></i> <span> News Page </span> <span class="menu-arrow"></span> </a>
                                 <ul class="list-unstyled">
                                     <li><a href="{{ route('latest.news') }}">Latest News</a></li>
                                     <li><a href="{{ route('popular.quotes') }}">Popular Quotes</a></li>
@@ -44,19 +44,16 @@
                             </li>
 
                             <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="ion-android-share"></i><span> Marketing </span> <span class="menu-arrow"></span></a>
+                                <a href="javascript:void(0);" class="waves-effect"><i class="typcn typcn-group"></i><span> Members </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="#">Coupons</a></li>
-                                    <li><a href="#">Gift Vouchers</a></li>
-                                    <li><a href="#">Leads</a></li>
-                                    <li><a href="#">Mail</a></li> <!-- mail box where mail to customers and leads -->
+                                    <li><a href="#">All Members</a></li>
                                 </ul>
                             </li>
 
                             <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="ion-person-stalker"></i><span>Customers </span> <span class="menu-arrow"></span></a>
+                                <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-credit-card"></i><span>Donation </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="#">Customers</a></li>
+                                    <li><a href="#">Donations</a></li>
                                 </ul>
                             </li>
 
@@ -69,13 +66,7 @@
                                 </ul>
                             </li>
 
-                            <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="md-account-balance-wallet"></i><span> Payment Gateways </span> <span class="menu-arrow"></span></a>
-                                <ul class="list-unstyled">
-                                    <li><a href="#">PayPal</a></li>
-                                    <li><a href="#">Stripe</a></li>
-                                </ul>
-                            </li>
+                        
 
 
                             <li class="has_sub">

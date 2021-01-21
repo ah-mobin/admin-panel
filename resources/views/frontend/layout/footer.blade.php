@@ -58,11 +58,11 @@
 
                         <div class="social_links">
                             <ul>
-                                <li><a href="https://www.facebook.com/rfb20"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="https://twitter.com/FightersRfb"><i class="fab fa-twitter"></i></a></li>
-                                <!-- <li><a href=""><i class="fab fa-linkedin-in"></i></a></li> -->
-                                <li><a href="https://www.youtube.com/channel/UC5pz54PQ1TZJW24cFT9rrpg"><i class="fab fa-youtube"></i></a></li>
-                                <li><a href="mailto:rfb0620@gmail.com"><i class="fa fa-envelope"></i></a></li>
+                                <li><a href="https://www.facebook.com/NRBGlobal20/"><i class="fab fa-facebook-f"></i></a></li>
+                                {{--  <li><a href="https://twitter.com/"><i class="fab fa-twitter"></i></a></li>  --}}
+                                {{--  <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>  --}}
+                                {{--  <li><a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a></li>  --}}
+                                <li><a href="mailto:nrbglobal20@gmail.com"><i class="fa fa-envelope"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -74,7 +74,7 @@
     </footer>
 
     <div class="copyright">
-        <p>&copy; Brand Share Ltd. 2020 - 2024. All rights reserved</p>
+        <p>&copy; BrainShare Ltd. 2020 - 2024. All rights reserved</p>
     </div>
 
     <script src="{{ asset('frontend/js/jquery-3.5.1.js') }}"></script>

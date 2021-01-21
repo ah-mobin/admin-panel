@@ -11,6 +11,7 @@ use App\Models\AdvisorCommittee;
 use App\Models\Founder;
 use App\Models\ContactMessage;
 use App\Models\About;
+use App\Models\News;
 use App\Models\Quote;
 use App\Models\VisionMission;
 use Illuminate\Support\Facades\DB;
@@ -26,10 +27,17 @@ class PageController extends Controller
     }
 
     public function news(){
-        $news = DB::table('news')->join('users','news.publisher_id','users.id')->select('news.id','news.news_headline','short_desc','news_link','news_cover','published_date','users.name')->where('news.status','published')->get();
+        $news = DB::table('news')->join('users','news.publisher_id','users.id')->select('news.id','news.news_headline','news.news_slug','news.short_desc','news.news_link','news.news_cover','news.published_date','users.name')->where('news.status','published')->get();
         $quotes = Quote::select('quote_speech','speaker','speaker_photo')->where('status','enabled')->get();
         return view('frontend.pages.news',compact('news','quotes'));
     }
+
+
+    public function newsDetails($slug){
+        $news = News::with('publisher')->where('news_slug',$slug)->first();
+        return view('frontend.pages.news_details',compact('news'));
+    }
+
 
     public function activities(){
         return view('frontend.pages.activities');
